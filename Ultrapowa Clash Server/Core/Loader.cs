@@ -38,7 +38,7 @@
 
 
             // Core
-            //this.LicenseChecker = new LicenseChecker();
+            this.LicenseChecker = new LicenseChecker();
             this.ResourcesManager = new ResourcesManager();
             this.ObjectManager = new ObjectManager();
             this.Events = new EventsHandler();

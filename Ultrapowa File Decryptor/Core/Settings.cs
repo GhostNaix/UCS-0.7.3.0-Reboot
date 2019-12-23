@@ -2,6 +2,6 @@
 {
     class Settings
     {
-        public static bool? ScVersion = null;
+        public static bool? ScVersion = true;
     }
 }

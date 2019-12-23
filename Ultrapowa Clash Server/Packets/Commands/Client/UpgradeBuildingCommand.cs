@@ -4,6 +4,7 @@ using UCS.Files.Logic;
 using UCS.Helpers;
 using UCS.Helpers.Binary;
 using UCS.Logic;
+using System.Diagnostics;
 
 namespace UCS.Packets.Commands.Client
 {
@@ -29,14 +30,13 @@ namespace UCS.Packets.Commands.Client
         {
             var ca = this.Device.Player.Avatar;
             var go = this.Device.Player.GameObjectManager.GetGameObjectByID(BuildingId);
-            if (go !=null)
+            if (go != null)
             {
                 var b = (ConstructionItem)go;
                 if (b.CanUpgrade())
                 {
                     var bd = b.GetConstructionItemData();
-                    if (ca.HasEnoughResources(bd.GetBuildResource(b.GetUpgradeLevel() + 1),
-                        bd.GetBuildCost(b.GetUpgradeLevel() + 1)))
+                    if (ca.HasEnoughResources(bd.GetBuildResource(b.GetUpgradeLevel() + 1),bd.GetBuildCost(b.GetUpgradeLevel() + 1)))
                     {
                         if (this.Device.Player.HasFreeWorkers())
                         {
@@ -57,7 +57,19 @@ namespace UCS.Packets.Commands.Client
                             b.StartUpgrading();
                         }
                     }
+                    else
+                    {
+                        Debug.Write("[Debug] cannot upgrade not enough resources ?");
+                    }
                 }
+                else
+                {
+                    Debug.Write("[Debug] cannot upgrade for some reason ");
+                }
+            }
+            else
+            {
+                Debug.Write("[Debug] some how gameobject is equal to null");
             }
         }
     }

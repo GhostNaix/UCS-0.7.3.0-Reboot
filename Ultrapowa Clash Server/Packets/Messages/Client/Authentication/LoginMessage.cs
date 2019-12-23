@@ -145,7 +145,7 @@ namespace UCS.Packets.Messages.Client
                             new LoginFailedMessage(Device)
                             {
                                 ErrorCode = 11,
-                                Reason = "This is a Free Version of UCS. Please Upgrade on https://ultrapowa.com/forum"
+                                Reason = "This is a Free Version of UCS. Please Upgrade to Pro or Ultra Using Ultrapower Keygen"
                             }.Send();
                             return;
                         }
@@ -158,7 +158,7 @@ namespace UCS.Packets.Messages.Client
                             {
                                 ErrorCode = 11,
                                 Reason =
-                                    "This is a Pro Version of UCS. Please Upgrade to Ultra on https://ultrapowa.com/forum"
+                                    "This is a Pro Version of UCS. Please Upgrade to Ultra using Ultrapower Keygen"
                             }.Send();
                             return;
                         }

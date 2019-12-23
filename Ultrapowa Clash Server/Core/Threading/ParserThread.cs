@@ -64,7 +64,7 @@ namespace UCS.Helpers
                             Say($"LicenseID:           {Constants.LicensePlanID}");
                             Say($"CoC Version from SC: {VersionChecker.LatestCoCVersion()}");
                             Say("");
-                            Say($"©Ultrapowa 2014 - {DateTime.Now.Year}");
+                            Say($"Ultrapower  - {DateTime.Now.Year}");
                             Console.WriteLine("------------------------------------->");
                             break;
 

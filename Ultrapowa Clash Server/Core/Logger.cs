@@ -29,11 +29,11 @@ namespace UCS.Core
                     if (getlevel == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("[LOG]    " + text);
+                        Console.WriteLine("[LOG]  " + DateTime.Now + "  " + text);
                         Console.ResetColor();
                     }
                     using (StreamWriter sw = new StreamWriter(path,true))
-                    await sw.WriteLineAsync("[LOG]    " + text + " at " + DateTime.UtcNow);
+                    await sw.WriteLineAsync("[LOG]  " + DateTime.Now + "  " + text);
                 }
                 finally
                 {
@@ -52,11 +52,11 @@ namespace UCS.Core
                     if (getlevel == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("[LOG]    " + text);
+                        Console.WriteLine("[LOG]  " + DateTime.Now + "  " + text);
                         Console.ResetColor();
                     }
                     using (StreamWriter sw = new StreamWriter(path, true))
-                        await sw.WriteLineAsync("[LOG]    " + text + " at " + DateTime.UtcNow);
+                        await sw.WriteLineAsync("[LOG]  " + DateTime.Now + "  " + text);
                 }
                 finally
                 {
@@ -92,14 +92,14 @@ namespace UCS.Core
             if (!write)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("[UCS]    ");
+                Console.Write("[UCS]  " + DateTime.Now + "  ");
                 Console.ResetColor();
                 Console.WriteLine(message);
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("[UCS]    ");
+                Console.Write("[UCS]  " + DateTime.Now + "  ");
                 Console.ResetColor();
                 Console.Write(message);
             }
@@ -113,7 +113,7 @@ namespace UCS.Core
         public static void Error(string message)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("[ERROR]  " + message);
+            Console.WriteLine("[ERROR]  " + DateTime.Now + "  " + message);
             Console.ResetColor();
         }
 
@@ -144,7 +144,7 @@ namespace UCS.Core
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
-            Console.WriteLine("Please choose a valid Log Level");
+            Console.WriteLine("[ERROR]  " + DateTime.Now + "Please choose a valid Log Level");
             Console.WriteLine("UCS Emulator is now closing...");
             Console.ResetColor();
             Thread.Sleep(5000);

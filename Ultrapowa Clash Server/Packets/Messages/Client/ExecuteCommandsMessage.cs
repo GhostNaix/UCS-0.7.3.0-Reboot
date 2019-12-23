@@ -51,9 +51,7 @@ namespace UCS.Packets.Messages.Client
                         if (CommandFactory.Commands.ContainsKey(CommandID))
                         {
                             Logger.Write("Command '" + CommandID + "' is handled");
-                            Command Command =
-                                Activator.CreateInstance(CommandFactory.Commands[CommandID], Reader, this.Device,
-                                    CommandID) as Command;
+                            Command Command = Activator.CreateInstance(CommandFactory.Commands[CommandID], Reader, this.Device,CommandID) as Command;
 
                             if (Command != null)
                             {

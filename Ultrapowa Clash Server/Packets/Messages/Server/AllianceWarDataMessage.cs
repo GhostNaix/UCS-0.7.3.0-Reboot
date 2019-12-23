@@ -17,7 +17,7 @@ namespace UCS.Packets.Messages.Server
             this.Data.AddInt(0);
 
             this.Data.AddLong(1); // Team ID
-            this.Data.AddString("Ultrapowa");
+            this.Data.AddString("Ultrapower");
             this.Data.AddInt(0);
             this.Data.AddInt(1);
             this.Data.Add(0);
@@ -29,7 +29,7 @@ namespace UCS.Packets.Messages.Server
             this.Data.AddInt(0);
 
             this.Data.AddLong(1); // Team ID
-            this.Data.AddString("Ultrapowa");
+            this.Data.AddString("Ultrapower");
             this.Data.AddInt(0);
             this.Data.AddInt(1);
             this.Data.Add(0);

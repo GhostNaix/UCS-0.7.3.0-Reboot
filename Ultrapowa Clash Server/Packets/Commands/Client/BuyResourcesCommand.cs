@@ -6,12 +6,19 @@ using UCS.Core.Checker;
 using UCS.Files.Logic;
 using UCS.Helpers;
 using UCS.Helpers.Binary;
+using System.Diagnostics;
 
 namespace UCS.Packets.Commands.Client
 {
     // Packet 518
     internal class BuyResourcesCommand : Command
     {
+        internal object m_vCommand;
+        internal bool m_vIsCommandEmbedded;
+        internal int m_vResourceCount;
+        internal int m_vResourceId;
+        internal int Unknown1;
+
         public BuyResourcesCommand(Reader reader, Device client, int id) : base(reader, client, id)
         {
        
@@ -19,8 +26,8 @@ namespace UCS.Packets.Commands.Client
 
         internal override void Decode()
         {
-            this.m_vResourceId = this.Reader.ReadInt32();
             this.m_vResourceCount = this.Reader.ReadInt32();
+            this.m_vResourceId = this.Reader.ReadInt32();
             this.m_vIsCommandEmbedded = this.Reader.ReadBoolean();
             if (m_vIsCommandEmbedded)
             {
@@ -28,6 +35,7 @@ namespace UCS.Packets.Commands.Client
                 if (Depth >= MaxEmbeddedDepth)
                 {
                     Console.WriteLine("Detected UCS Exploit.");
+                    Logger.Say("Detected UCS Exploit. Banning IP.");
                 }
                 Depth = Depth;
             }
@@ -79,11 +87,5 @@ namespace UCS.Packets.Commands.Client
                 }
             }
         }
-
-        internal object m_vCommand;
-        internal bool m_vIsCommandEmbedded;
-        internal int m_vResourceCount;
-        internal int m_vResourceId;
-        internal int Unknown1;
     }
 }

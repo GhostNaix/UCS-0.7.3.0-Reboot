@@ -37,4 +37,4 @@
 "Russia Flag","TID_DECORATION_NATIONAL_FLAG",,"sc/buildings.sc","deco_rus_flag","generic_construction_state1","Gold",100000,15,1,2,2,,"deco_flagpole_base","npc_deco_flagpole_base","war_deco_flagpole_base",,
 "Denmark Flag","TID_DECORATION_NATIONAL_FLAG",,"sc/buildings.sc","deco_den_flag","generic_construction_state1","Gold",100000,15,1,2,2,,"deco_flagpole_base","npc_deco_flagpole_base","war_deco_flagpole_base",,
 "Greece Flag","TID_DECORATION_NATIONAL_FLAG",,"sc/buildings.sc","deco_greece_flag","generic_construction_state1","Gold",100000,15,1,2,2,,"deco_flagpole_base","npc_deco_flagpole_base","war_deco_flagpole_base",,
-"BK Statue","TID_DECORATION_BK_STATUE",,"sc/buildings.sc","deco_barbarian_king_statue","generic_construction_state1","Diamonds",500,,1,2,2,,"statue_base","npc_statue_base","npc_statue_base","TRUE","TRUE"
+"BK Statue","TID_DECORATION_BK_STATUE",,"sc/buildings.sc","deco_barbarian_king_statue","generic_construction_state1","Diamonds",500,,1,2,2,,"statue_base","npc_statue_base","npc_statue_base","TRUE",

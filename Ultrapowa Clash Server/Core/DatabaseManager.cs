@@ -12,7 +12,6 @@ using static UCS.Core.Logger;
 using System.Threading.Tasks;
 using UCS.Logic.Enums;
 using UCS.Helpers;
-using System.Diagnostics;
 
 namespace UCS.Core
 {
@@ -41,7 +40,7 @@ namespace UCS.Core
                     db.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception a)
             {
             }
         }
@@ -371,7 +370,7 @@ namespace UCS.Core
             {
                 switch (Save)
                 {
-                    case Save.Redis:
+                    /*case Save.Redis:
                         {
                             foreach (Level pl in avatars)
                             {
@@ -379,7 +378,7 @@ namespace UCS.Core
                                     pl.Avatar.SaveToJSON() + "#:#:#:#" + pl.SaveToJSON(), TimeSpan.FromHours(4));
                             }
                             break;
-                        }
+                        }*/
 
                     case Save.Mysql:
                         {
@@ -393,25 +392,23 @@ namespace UCS.Core
 
                                         p.Avatar = pl.Avatar.SaveToJSON();
                                         p.GameObjects = pl.SaveToJSON();
-                                        Debug.WriteLine("GameObjects JSON Dump : " + p.GameObjects)
-                                        /*Notice how the JSON does not correspond with the Actual game objects on the andriod client*/
-                                        /*How i know this ? Upgrade a building to level 3 the json should list a level 2 however it doesn't save on second save only the first 2 building that you upgrade*/
                                     }
 
                                 }
                                 await context.SaveChangesAsync();
+                                context.SaveChanges();
                             }
                             break;
                         }
                     case Save.Both:
                         {
-                            this.Save(avatars, Save.Mysql);
-                            this.Save(avatars, Save.Redis);
+                            /*this.Save(avatars, Save.Redis);*/
+                            await this.Save(avatars, Save.Mysql);
                             break;
                         }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
         }
@@ -423,7 +420,7 @@ namespace UCS.Core
                 switch (Save)
                 {
 
-                    case Save.Redis:
+                    /*case Save.Redis:
                         {
                             foreach (Alliance alliance in alliances)
                             {
@@ -431,7 +428,7 @@ namespace UCS.Core
                                     TimeSpan.FromHours(4));
                             }
                             break;
-                        }
+                        }*/
                     case Save.Mysql:
                         {
                             using (Mysql context = new Mysql())
@@ -447,19 +444,20 @@ namespace UCS.Core
 
                                 }
                                 await context.SaveChangesAsync();
+                                context.SaveChanges();
                             }
                             break;
                         }
                     case Save.Both:
                         {
-                            this.Save(alliances, Save.Mysql);
-                            this.Save(alliances, Save.Redis);
+                            /*this.Save(alliances, Save.Redis);*/
+                            await this.Save(alliances, Save.Mysql);
                             break;
                         }
                 }
             }
-            catch (Exception)
-            {           
+            catch (Exception ez)
+            {
             }
         }
     }

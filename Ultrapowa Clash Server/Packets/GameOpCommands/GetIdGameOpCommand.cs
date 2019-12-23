@@ -23,7 +23,7 @@ namespace UCS.Packets.GameOpCommands
                 if (m_vArgs.Length >= 1)
                 {
                     GlobalChatLineMessage _MSG = new GlobalChatLineMessage(level.Client);
-                    _MSG.PlayerName = "Ultrapowa Clash Server";
+                    _MSG.PlayerName = "Ultrapower Clash Server AI";
                     _MSG.LeagueId = 22;
                     _MSG.Message = "Your ID: " + level.Avatar.UserId;
                     _MSG.Send();

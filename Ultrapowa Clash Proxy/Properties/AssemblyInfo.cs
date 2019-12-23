@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // Change these attribute values to modify the information associated with an assembly.
 
 [assembly: AssemblyTitle("Ultrapowa Clash Proxy")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Clash of Clans MITM proxy")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Uplink.inc")]
 [assembly: AssemblyProduct("Ultrapowa Clash Proxy")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

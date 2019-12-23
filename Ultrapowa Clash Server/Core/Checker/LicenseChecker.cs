@@ -16,6 +16,8 @@ namespace UCS.Core.Checker
 {
     internal class LicenseChecker
     {
+        private string Key;
+        private int responseData;
         public LicenseChecker()
         {
             try
@@ -23,67 +25,51 @@ namespace UCS.Core.Checker
                 Program._Stopwatch.Stop();
 
                 back:
-                string Key = GetKey();
+                Key = GetKey();
                 if (Key.Length == 32)
                 {
                     CheckIfKeyIsSaved(Key);
-                }
-
-                if (Key.Length == 32)
-                {
-                    TcpClient client     = new TcpClient("213.202.254.160", 8008);
-                    byte[] data          = Encoding.ASCII.GetBytes(Key);
-                    NetworkStream stream = client.GetStream();
-                    stream.Write(data, 0, data.Length);
-                    data                 = new byte[256];
-                    string responseData  = string.Empty;
-                    int bytes            = stream.Read(data, 0, data.Length);
-                    responseData         = Encoding.ASCII.GetString(data, 0, bytes);
-
-                    if (Convert.ToInt32(responseData) > 0)
+                    if (Key.StartsWith("1"))
                     {
-                        if (Convert.ToInt32(responseData) < 4)
+                        responseData = 1;
+                    }
+                    else if (Key.StartsWith("2"))
+                    {
+                        responseData = 2;
+                    }
+                    else if (Key.StartsWith("3"))
+                    {
+                        responseData = 3;
+                    }
+                    else
+                    {
+                        responseData = 69;
+                    }
+                    if (responseData > 0 && responseData < 4)
+                    {
+                        Constants.LicensePlanID = responseData;
+                        Program.UpdateTitle();
+
+                        switch (responseData)
                         {
-                            Constants.LicensePlanID = Convert.ToInt32(responseData);
-                            Program.UpdateTitle();
 
-                            switch (Convert.ToInt32(responseData))
-                            {
-
-                                case 1:
+                            case 1:
                                 {
                                     Say("UCS is running on Plan (Lite).");
                                     break;
                                 }
 
-                                case 2:
+                            case 2:
                                 {
                                     Say("UCS is running on Plan (Pro).");
                                     break;
                                 }
 
-                                case 3:
+                            case 3:
                                 {
                                     Say("UCS is running on Plan (Ultra).");
                                     break;
                                 }
-                            }
-                        }
-                        else if (Convert.ToInt32(responseData) == 100)
-                        {
-                            Say();
-                            Say("This Key has been disabled, please contact the Support at Ultrapowa.com.");
-                            Say("UCS will be closed now...");
-                            Thread.Sleep(4000);
-                            Environment.Exit(0);
-                        }
-                        else if (Convert.ToInt32(responseData) == 200)
-                        {
-                            Say();
-                            Say("This Key is expired, please contact the Support at Ultrapowa.com.");
-                            Say("UCS will be closed now...");
-                            Thread.Sleep(4000);
-                            Environment.Exit(0);
                         }
                     }
                     else
@@ -94,8 +80,6 @@ namespace UCS.Core.Checker
                         Thread.Sleep(4000);
                         Environment.Exit(0);
                     }
-                    stream.Close();
-                    client.Close();
                 }
                 else
                 {
@@ -116,7 +100,7 @@ namespace UCS.Core.Checker
 
         private static void CheckIfKeyIsSaved(string _Key)
         {
-            string _FilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "Ky01.lic";
+            string _FilePath = "Ky01.lic";
             if (!File.Exists(_FilePath))
             {
                 if (_Key.Length == 32)
@@ -132,7 +116,7 @@ namespace UCS.Core.Checker
         private static string GetKey()
         {
             back:
-            string _FilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "Ky01.lic";
+            string _FilePath = "Ky01.lic";
             if (File.Exists(_FilePath))
             {
                 string Data = FromHexString(File.ReadAllText(_FilePath));
@@ -150,9 +134,8 @@ namespace UCS.Core.Checker
             {
                 Say("Enter now your License Key:");
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("[UCS]    ");
+                Console.Write("[Enter Your License key ] >  ");
                 Console.ResetColor();
-                goback:
                 string Key = Console.ReadLine();
                 return Key;
             }
@@ -178,5 +161,6 @@ namespace UCS.Core.Checker
             }
             return Encoding.Unicode.GetString(bytes);
         }
+
     }
 }

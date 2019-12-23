@@ -7,7 +7,7 @@ namespace UCS.Logic.StreamEntry
 {
     internal class ShareStreamEntry : StreamEntry
     {
-        public static string EnemyName = "UltraPowa";
+        public static string EnemyName = "UltraPower";
         public static string Message = "Look this battle!";
         public static string ReplayJson;
         public static int Unknown1;

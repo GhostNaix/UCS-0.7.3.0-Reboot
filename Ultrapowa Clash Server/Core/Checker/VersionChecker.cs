@@ -30,7 +30,7 @@ namespace UCS.Core.Web
         {
             try
             {
-                string Version = "0.7.3.1";
+                string Version = "0.7.3.2";
                 return (Version);
             }
             catch (Exception)

@@ -53,7 +53,7 @@ namespace UCS
 
             if (Core.Settings.Constants.LicensePlanID < 2)
             {
-                var message = MessageBox.Show("The User Interface is not available for unpaid Users. Please upgrade to Premium on https://ultrapowa.com/forum", "Not available for unpaid Users.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var message = MessageBox.Show("The User Interface is not available for unpaid Users. Please upgrade to ultra using the Ultrapower keygen", "Not available for unpaid Users.", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (message == DialogResult.OK)
                 {
@@ -277,20 +277,20 @@ namespace UCS
         private void materialRaisedButton5_Click(object sender, EventArgs e)
         {
             txtStartingGems.Text = "999999999";
-            txtStartingGold.Text = "999999999";
-            txtStartingElixir.Text = "999999999";
-            txtStartingDarkElixir.Text = "999999999";
+            txtStartingGold.Text = "2000";
+            txtStartingElixir.Text = "2000";
+            txtStartingDarkElixir.Text = "2000";
             txtStartingTrophies.Text = "0";
             txtStartingLevel.Text = "1";
-            txtUpdateURL.Text = "https://ultrapowa.com";
+            txtUpdateURL.Text = "N/A";
             txtUsePatch.Text = "false";
             txtPatchURL.Text = "";
             txtMintenance.Text = "0";
             txtDatabaseType.Text = "sqlite";
             txtPort.Text = "9339";
-            txtAdminMessage.Text = "Welcome to UCS Beta! Visit https://ultrapowa.com for more info.";
+            txtAdminMessage.Text = "Welcome to Ultrapower Clash Server v0.7.3.2 Modded By Naix";
             txtLogLevel.Text = "0";
-            txtClientVersion.Text = "8.551";
+            txtClientVersion.Text = "8.709.16";
         }
 
         //Save Changes Button
@@ -366,7 +366,7 @@ namespace UCS
             }
 
             doc.Save(path);
-            var title = "Ultrapowa Clash Server Manager";
+            var title = "Ultrapower Clash Server Manager GUI";
             var message = "Changes has been saved!";
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -404,7 +404,7 @@ namespace UCS
             mail.IsNew = 2; // 0 = Seen, 2 = New
             mail.AllianceId = 0;
             mail.AllianceBadgeData = 1526735450;
-            mail.AllianceName = "Ultrapowa";
+            mail.AllianceName = "Ultrapower";
             mail.Message = textBox24.Text;
             mail.m_vSenderLevel = 300;
             mail.m_vSenderLeagueId = 22;
@@ -626,6 +626,11 @@ namespace UCS
             T.Stop();
             Count = 0;
             materialLabel13.Text = Convert.ToString(Count);
+        }
+
+        private void materialLabel40_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

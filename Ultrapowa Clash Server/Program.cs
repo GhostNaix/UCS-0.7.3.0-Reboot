@@ -18,10 +18,9 @@ namespace UCS
     internal class Program
     {
         internal static int OP = 0;
-        internal static string Title = $"Ultrapowa Clash Server v{Constants.Version} Mod B1 - ©Ultrapowa & Naix | Online Players: ";
+        internal static string Title = $"Ultrapowwe Clash Server v{Constants.Version} - ©Ultrapowa & Naix | Online Players: ";
         public static Stopwatch _Stopwatch = new Stopwatch();
         public static string Version { get; set; }
-        public static String LIC = "null"; 
 
         internal static void Main()
         {
@@ -30,6 +29,7 @@ namespace UCS
             uint LWA_ALPHA = 0x2;
             IntPtr Handle = GetConsoleWindow();
             SetWindowLong(Handle, GWL_EXSTYLE, (int)GetWindowLong(Handle, GWL_EXSTYLE) ^ WS_EX_LAYERED);
+            Console.SetWindowSize(92,32);
 
             if (Utils.ParseConfigBoolean("Animation"))
             {
@@ -59,28 +59,25 @@ namespace UCS
             if (Constants.LicensePlanID == 3)
             {
                 Console.Title = Title + OP;
-                LIC = "Ultra";
             }
             else if(Constants.LicensePlanID == 2)
             {
                 Console.Title = Title + OP + "/700";
-                LIC = "Pro";
             }
             else if (Constants.LicensePlanID == 1)
             {
                 Console.Title = Title + OP + "/350";
-                LIC = "Lite";
             }
 
             Say();
 
             Console.ForegroundColor = ConsoleColor.Blue;
-            Logger.WriteCenter(@" ____ ___.__   __                                                  ");
-            Logger.WriteCenter(@"|    |   \  |_/  |_____________  ______   ______  _  _______       ");
-            Logger.WriteCenter(@"|    |   /  |\   __\_  __ \__  \ \____ \ /  _ \ \/ \/ /\__  \      ");
-            Logger.WriteCenter(@"|    |  /|  |_|  |  |  | \// __ \|  |_> >  <_> )     /  / __ \_    ");
-            Logger.WriteCenter(@"|______/ |____/__|  |__|  (____  /   __/ \____/ \/\_/  (____  /    ");
-            Logger.WriteCenter(@"                               \/|__|                       \/     ");
+            Logger.WriteCenter(" _   _ _ _                                         ");
+            Logger.WriteCenter(" | | | | | |_ _ __ __ _ _ __   _____      _____ _ __ ");
+            Logger.WriteCenter(" | | | | | __| '__/ _` | '_ \\ / _ \\ \\ /\\ / / _ \\ '__|");
+            Logger.WriteCenter(" | |_| | | |_| | | (_| | |_) | (_) \\ V  V /  __/ |   ");
+            Logger.WriteCenter("  \\___/|_|\\__|_|  \\__,_| .__/ \\___/ \\_/\\_/ \\___|_|   ");
+            Logger.WriteCenter("                       |_|                           ");
             Logger.WriteCenter("            ");
 
             Console.ResetColor();
@@ -111,9 +108,6 @@ namespace UCS
                 Console.WriteLine($"> UCS is up-to-date: {Constants.Version}");
                 Console.ResetColor();
                 Console.ForegroundColor = ConsoleColor.Green;
-                Say();
-                Say("License Plan: " + LIC );
-                Say();
                 Say("Preparing Server...\n");
                 Resources.Initialize();
             }

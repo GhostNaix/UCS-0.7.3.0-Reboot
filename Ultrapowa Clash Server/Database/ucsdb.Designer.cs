@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\aidid\Desktop\Ultrapowa Development\MAGIC\Ultrapowa Clash Server\Database\ucsdb.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Naix\Desktop\Ultrapowa Server (Vanilla)\Server\SRC\Ultrapower-0.7.3.1-Experimental\Ultrapowa Clash Server\Database\ucsdb.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

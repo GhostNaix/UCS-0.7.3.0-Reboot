@@ -19,7 +19,7 @@ namespace UCS.Packets
                 HomeId = 0,
                 CurrentHomeId = 0,
                 LeagueId = 22,
-                PlayerName = "Ultrapowa Clash Server"
+                PlayerName = "Ultrapower Clash Server AI"
             };
             p.Send();
         }

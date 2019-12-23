@@ -88,7 +88,7 @@ namespace UCS.Packets.GameOpCommands
                             HomeId = level.Avatar.UserId,
                             CurrentHomeId = level.Avatar.UserId,
                             LeagueId = 22,
-                            PlayerName = "Ultrapowa Clash Server"
+                            PlayerName = "Ultrapower Clash Server AI"
                         };
 
                         Processor.Send(c);
@@ -103,7 +103,7 @@ namespace UCS.Packets.GameOpCommands
                         HomeId = level.Avatar.UserId,
                         CurrentHomeId = level.Avatar.UserId,
                         LeagueId = 22,
-                        PlayerName = "Ultrapowa Clash Server"
+                        PlayerName = "Ultrapower Clash Server AI"
                     };
                     Processor.Send(b);
                 }

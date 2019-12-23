@@ -637,6 +637,7 @@ namespace UCS
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
@@ -1725,7 +1726,7 @@ namespace UCS
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox3.Size = new System.Drawing.Size(673, 70);
             this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "Visit http://ultrapowa.com!";
+            this.textBox3.Text = "Hello World !";
             // 
             // textBox2
             // 
@@ -1760,7 +1761,7 @@ namespace UCS
             this.textBox1.Size = new System.Drawing.Size(135, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Ultrapowa";
+            this.textBox1.Text = "Ultrapower";
             this.textBox1.UseSystemPasswordChar = false;
             // 
             // groupBox2
@@ -1817,7 +1818,7 @@ namespace UCS
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(334, 78);
             this.textBox24.TabIndex = 4;
-            this.textBox24.Text = "Visit http://ultrapowa.com";
+            this.textBox24.Text = "hello World !!";
             // 
             // textBox23
             // 
@@ -1834,7 +1835,7 @@ namespace UCS
             this.textBox23.Size = new System.Drawing.Size(236, 23);
             this.textBox23.TabIndex = 3;
             this.textBox23.TabStop = false;
-            this.textBox23.Text = "Ultrapowa";
+            this.textBox23.Text = "Ultrapower";
             this.textBox23.UseSystemPasswordChar = false;
             // 
             // groupBox1
@@ -1880,7 +1881,7 @@ namespace UCS
             this.textBox22.Size = new System.Drawing.Size(220, 23);
             this.textBox22.TabIndex = 2;
             this.textBox22.TabStop = false;
-            this.textBox22.Text = "Ultrapowa";
+            this.textBox22.Text = "Ultrapower";
             this.textBox22.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton9
@@ -1909,7 +1910,7 @@ namespace UCS
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(318, 78);
             this.textBox21.TabIndex = 0;
-            this.textBox21.Text = "Visit http://ultrapowa.com";
+            this.textBox21.Text = "hello World !!";
             // 
             // tabPage7
             // 
@@ -1983,6 +1984,7 @@ namespace UCS
             this.columnHeader9,
             this.columnHeader10});
             this.listView2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.HideSelection = false;
             listViewItem3.StateImageIndex = 0;
             listViewItem4.StateImageIndex = 0;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
@@ -2248,9 +2250,10 @@ namespace UCS
             this.materialLabel40.Location = new System.Drawing.Point(214, 158);
             this.materialLabel40.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel40.Name = "materialLabel40";
-            this.materialLabel40.Size = new System.Drawing.Size(272, 38);
+            this.materialLabel40.Size = new System.Drawing.Size(222, 38);
             this.materialLabel40.TabIndex = 2;
-            this.materialLabel40.Text = "             ©Ultrapowa 2014-2017\r\nThis program is copyrighted worldwide.";
+            this.materialLabel40.Text = "             Ultrapower Clash Server\r\n                   Modded by Naix";
+            this.materialLabel40.Click += new System.EventHandler(this.materialLabel40_Click);
             // 
             // materialTabSelector1
             // 
@@ -2274,7 +2277,7 @@ namespace UCS
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "UCSUI";
-            this.Text = "Ultrapowa Clash Server Manager";
+            this.Text = "Ultrapower Clash Server Manager";
             this.Load += new System.EventHandler(this.UCSUI_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

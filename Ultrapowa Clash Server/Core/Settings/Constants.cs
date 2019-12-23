@@ -2,6 +2,7 @@ using System;
 using System.Configuration;
 using System.Reflection;
 using UCS.Helpers;
+using UCS.Core.Checker;
 
 namespace UCS.Core.Settings
 {
@@ -18,7 +19,7 @@ namespace UCS.Core.Settings
 
         internal const int SendBuffer = 2048;
         internal const int ReceiveBuffer = 2048;
-        public static int LicensePlanID = /*1;*/ 3;
+        public static int LicensePlanID;
 
 
         internal static readonly string[] AuthorizedIP = { "192.168.0.5" };
