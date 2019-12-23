@@ -23,8 +23,3 @@ Projects developed by the Ultrapowa Development Team include:
 
 * [Clash of Clans - Patched APK - v8.551.24](https://www.mediafire.com/?wgl58x1x0a0wn88)
 * [Clash of Clans - Patched APK - v8.709.16](https://uploadify.net/5b9fad82894225d6/Ultrapowa_8.709.16_Client.apk)
-
-## Known Buges/Glitches
-~~I have no idea why but the GameObject Json doesn't save properly to the database I have no idea why and neither does ultrapowa if anyone has an idea why please contact me via the issues section~~
-
-Issue Resolved
