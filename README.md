@@ -26,4 +26,5 @@ Projects developed by the Ultrapowa Development Team include:
 
 ## Known Buges/Glitches
 ~~I have no idea why but the GameObject Json doesn't save properly to the database I have no idea why and neither does ultrapowa if anyone has an idea why please contact me via the issues section~~
+
 Issue Resolved Uploading Files soon
