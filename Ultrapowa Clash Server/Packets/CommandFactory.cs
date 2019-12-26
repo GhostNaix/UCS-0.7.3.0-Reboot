@@ -62,6 +62,7 @@ namespace UCS.Packets
                 {544, typeof(GetVillageLayoutsCommand)},
                 {546, typeof(EditVillageLayoutCommand)},
                 {549, typeof(UpgradeMultipleBuildingsCommand)},
+                {550, typeof(RemoveUnitsCommand)},
                 {552, typeof(SaveVillageLayoutCommand)},
                 {553, typeof(ClientServerTickCommand)},
                 {554, typeof(RotateDefenseCommand)},
