@@ -96,8 +96,8 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <Optimize>true</Optimize>
-    <WarningLevel>0</WarningLevel>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
     <LangVersion>6</LangVersion>
     <FileAlignment>1024</FileAlignment>
   </PropertyGroup>

@@ -92,7 +92,6 @@ namespace UCS.Packets
             //Commands.Add(2, typeof(LeaveAllianceCommand));
             //Commands.Add(3, typeof(ChangeAvatarCommand));
             //Commands.Add(5, typeof());
-            //Commands.Add(550, typeof(RemoveUnitsCommand));
             //Commands.Add(551, typeof(ContinueBarrackBoostCommand));
             //Commands.Add(563, typeof(CollectClanResourcesCommand));
             //Commands.Add(573, typeof(RemoveShieldToAttackCommand));

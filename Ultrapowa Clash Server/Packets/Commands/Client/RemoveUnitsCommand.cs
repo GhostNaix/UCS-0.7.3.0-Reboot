@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using System.IO;using UCS.Core;
+using System.IO;
+using UCS.Core;
 using UCS.Files.Logic;
 using UCS.Helpers.Binary;
 using UCS.Logic;
@@ -15,12 +16,12 @@ namespace UCS.Packets.Commands.Client
 
         internal override void Decode()
         {
-            this.Reader.ReadUInt32();
-            UnitTypesCount = this.Reader.ReadInt32();
-
+            UnitTypesCount = this.Reader.ReadUInt32();
             UnitsToRemove = new List<UnitToRemove>();
-            for (var i = 0; i < UnitTypesCount; i++)
+            for (int i = 0; i < UnitTypesCount; i++)
             {
+                this.Reader.ReadInt32();
+                this.Reader.ReadUInt32();
                 int UnitType = this.Reader.ReadInt32();
                 int count = this.Reader.ReadInt32();
                 int level = this.Reader.ReadInt32();
@@ -43,7 +44,7 @@ namespace UCS.Packets.Commands.Client
                     DataSlot _DataSlot = _PlayerUnits.Find(t => t.Data.GetGlobalID() == _Troop.GetGlobalID());
                     if (_DataSlot != null)
                     {
-                        _DataSlot.Value = _DataSlot.Value - 1;
+                        _DataSlot.Value = _DataSlot.Value - _Unit.Count;
                     }
                 }
                 else if (_Unit.Data.ToString().StartsWith("260"))
@@ -52,14 +53,14 @@ namespace UCS.Packets.Commands.Client
                     DataSlot _DataSlot = _PlayerSpells.Find(t => t.Data.GetGlobalID() == _Spell.GetGlobalID());
                     if (_DataSlot != null)
                     {
-                        _DataSlot.Value = _DataSlot.Value - 1;
+                        _DataSlot.Value = _DataSlot.Value - _Unit.Count;
                     }
                 }
             }
         }
 
         public List<UnitToRemove> UnitsToRemove;
-        public int UnitTypesCount;
+        public uint UnitTypesCount;
     }
 
     internal class UnitToRemove
